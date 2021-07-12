@@ -1,0 +1,29 @@
+spring:
+  datasource:
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/hotevent?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai
+    type: com.zaxxer.hikari.HikariDataSource
+  mvc:
+    view:
+      suffix: .jsp
+      prefix: /WEB-INF/jsp/
+  application:
+    name: hotevent
+  jackson:
+    date-format: yyyy-MM-dd
+    time-zone: GMT+8
+  resources:
+    static-locations: classpath:/res/
+mybatis:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  type-aliases-package: cn.ch06.hoteventtest.entity
+  mapper-locations: classpath:cn/ch06/hoteventtest/mapper/*.xml
+server:
+  servlet:
+    context-path: /hotevent/
+    encoding:
+      charset: utf-8
+  port: 8080
